@@ -1,0 +1,45 @@
+{
+  "name": "express-app",
+  "version": "0.0.0",
+  "description": "Node/Express web application",
+  "main": "app/index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && webpack --config config/webpack.config.deploy.js && node app/index.js",
+    "start": "rm -rf ./dist && webpack --config config/webpack.config.dev.js",
+    "test": "npx ava --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lgensinger/express-app.git"
+  },
+  "config": {
+    "port": "3000",
+    "base_url": "/api/1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "moment": "^2.26.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "ava": "^3.7.1",
+    "@babel/core": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "@babel/preset-env": "^7.9.5",
+    "start-server-webpack-plugin": "^2.2.5",
+    "supertest": "^4.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "ava": {
+    "files": [
+      "tests/*_test.js"
+    ],
+    "babel": true,
+    "timeout": "60s"
+  }
+}
