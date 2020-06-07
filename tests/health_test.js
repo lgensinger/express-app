@@ -15,6 +15,7 @@ test("HEALTH:health", async t => {
     t.deepEqual(Object.keys(res.body).sort(), [
         "base", 
         "customFromEnv",
+        "datastore_online",
         "name", 
         "release", 
         "routes", 

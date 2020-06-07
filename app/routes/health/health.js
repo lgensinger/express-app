@@ -54,6 +54,7 @@ module.exports = function(req, res, next) {
     // build exposed object
     var result = {
         base: packageConfig.base_url,
+        datastore_online: true,
         name: packageFile.name,
         release: packageFile.version,
         routes: routes.map(d => d.path),
